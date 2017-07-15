@@ -106,6 +106,26 @@ module.exports = function (grunt) {
                         {
                             match: '{PhotoURL-500}',
                             replacement: 'http://lorempixel.com/500/500'
+                        },
+                        {
+                            match: '{PhotoURL-Panorama}',
+                            replacement: 'http://lorempixel.com/1000/400'
+                        },
+                        {
+                            match: '{Photoset}',
+                            replacement: '<div id="photoset_163011928188" class="html_photoset"><iframe id="photoset_iframe_163011928188" name="photoset_iframe_163011928188" class="photoset" scrolling="no" frameborder="0" height="511" width="100%" style="border:0px; background-color:transparent; overflow:hidden;" src="https://www.tumblr.com/post/163011928188/photoset_iframe/tremblrtheme/tumblr_ot4mv2tChL1wum1vk/0/false"></iframe></div>'
+                        },
+                        {
+                            match: '{Quote}',
+                            replacement: 'It does not matter how slow you go so long as you do not stop.'
+                        },
+                        {
+                            match: '{Source}',
+                            replacement: 'Confucious'
+                        },
+                        {
+                            match: '{Name}',
+                            replacement: 'Link post'
                         }
                     ]
                 },
