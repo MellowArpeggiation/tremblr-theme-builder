@@ -19,8 +19,11 @@ html
             crossorigin='anonymous'
         )
 
+        //- Insert stylesheet, uses custom grunt insert directive
+        style
+            // !import styles 
     body
-        // Navigation
+        //- Navigation
         nav(class='navbar navbar-toggleable-sm navbar-light bg-faded')
             button(
                 class='navbar-toggler'
@@ -39,5 +42,8 @@ html
                         a(class='nav-item nav-link' href='#') Ask
                         a(class='nav-item nav-link' href='#') Submit
         
-        // Content
+        //- Content
         
+        //- Insert scripts, uses custom grunt insert directive
+        script
+            // !import scripts 
