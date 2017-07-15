@@ -19,6 +19,7 @@
     "grunt-contrib-pug": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-insert": "^0.1.0",
+    "grunt-replace": "^1.0.1",
     "grunt-sass": "^2.0.0",
     "load-grunt-tasks": "^3.5.2"
   }

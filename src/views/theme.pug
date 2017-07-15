@@ -4,7 +4,9 @@ html
         title {Title}
         link(rel='shortcut icon' href="{Favicon}")
         link(rel='alternate' type='application/rss+xml' href='{RSS}')
+        // {block:Description}
         meta(name="description" content="{MetaDescription}")
+        // {/block:Description}
         
         //- jQuery
         script(
@@ -48,7 +50,7 @@ html
                 span(class='navbar-toggler-icon')
             
             div(class='container')
-                a(class='navbar-brand' href='#') Blog name
+                a(class='navbar-brand' href='#') {Title}
                 div(class='collapse navbar-collapse' id='navigation')
                     div(class='navbar-nav')
                         a(class='nav-item nav-link' href='#') Ask
@@ -66,7 +68,6 @@ html
             include post-chat.pug
             include post-video.pug
             include post-audio.pug
-            if tumbl
             // {/block:Posts}
         
         //- Insert scripts, uses custom grunt insert directive
