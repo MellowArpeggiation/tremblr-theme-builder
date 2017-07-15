@@ -1,0 +1,32 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "node": true
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "eqeqeq": "error",
+        "semi": "error",
+        "comma-dangle": "error",
+        "curly": ["error", "multi"],
+
+        "no-unused-vars": "warn",
+        "space-before-blocks": "warn",
+        "space-before-function-paren": ["warn", {
+            "anonymous": "always",
+            "named": "never",
+            "asyncArrow": "always"
+        }],
+        "semi-spacing": "warn",
+        "space-in-parens": "warn",
+        "comma-spacing": "warn",
+        "no-console": "warn"
+    }
+}
