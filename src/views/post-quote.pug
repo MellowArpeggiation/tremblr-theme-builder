@@ -1,4 +1,14 @@
-// {block:Quote}
-div(class='row')
-    div(class='col')
-// {/block:Quote}
+extends post.pug
+
+prepend post
+    // {block:Quote}
+append post
+    // {/block:Quote}
+
+block content
+    div(class='card-block')
+        blockquote(class='blockquote')
+            p {Quote}
+            // {block:Source}
+            footer(class='blockquote-footer') {Source}
+            // {/block:Source}

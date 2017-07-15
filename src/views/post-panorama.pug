@@ -1,11 +1,15 @@
-// {block:Panorama}
-div(class='row')
-    div(class='col')
-        figure(class='figure')
-            img(
-                class='img-fluid rounded'
-                src='http://lorempixel.com/1000/400'
-                alt='{PhotoAlt}'
-            )
-            figcaption(class='figure-caption') {Caption}
-// {/block:Panorama}
+extends post.pug
+
+prepend post
+    // {block:Panorama}
+append post
+    // {/block:Panorama}
+
+block content
+    img(
+        class='card-img-top'
+        src='{PhotoURL-Panorama}'
+        alt='{PhotoAlt}'
+    )
+
+    include components/caption.pug

@@ -1,4 +1,17 @@
-// {block:Chat}
-div(class='row')
-    div(class='col')
-// {/block:Chat}
+extends post.pug
+
+prepend post
+    // {block:Chat}
+append post
+    // {/block:Chat}
+
+block content
+    // {block:Title}
+    h3(class='card-header')
+        a(href='{Permalink}') {Title}
+    // {/block:Title}
+
+    ul(class='list-group list-group-flush')
+        // {block:Lines}
+        li(class='list-group-item') {Line}
+        // {/block:Lines}

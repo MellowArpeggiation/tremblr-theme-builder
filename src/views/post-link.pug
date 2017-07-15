@@ -1,4 +1,16 @@
-// {block:Link}
-div(class='row')
-    div(class='col')
-// {/block:Link}
+extends post.pug
+
+prepend post
+    // {block:Link}
+append post
+    // {/block:Link}
+
+block content
+    h3(class='card-header')
+        //- Is a literal, as it requires a weird interpolated block
+        <a href="{URL}" {Target}>{Name}</a>
+
+    // {block:Description}
+    div(class='card-block')
+        p(class='card-text') {Description}
+    // {/block:Description}

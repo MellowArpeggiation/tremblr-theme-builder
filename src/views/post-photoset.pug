@@ -1,4 +1,11 @@
-// {block:Photoset}
-div(class='row')
-    div(class='col')
-// {/block:Photoset}
+extends post.pug
+
+prepend post
+    // {block:Photoset}
+append post
+    // {/block:Photoset}
+
+block content
+    div(class='card-img-top') {Photoset}
+
+    include components/caption.pug
