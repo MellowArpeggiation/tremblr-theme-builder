@@ -40,9 +40,6 @@ module.exports = function (grunt) {
         },
 
         concat: {
-            options: {
-
-            },
             scripts: {
                 src: ['src/scripts/**/*.js'],
                 dest: '.grunt/theme.js'
@@ -50,20 +47,19 @@ module.exports = function (grunt) {
         },
 
         pug: {
-            options: {
-
-            },
             views: {
                 src: 'src/views/theme.pug',
                 dest: '.grunt/theme.html'
             }
         },
 
+        // Create the distibutable copies
         copy: {
-            options: {
-
+            sample: {
+                src: '.grunt/theme.html',
+                dest: 'dist/sample.html'
             },
-            theme: {
+            tumblr: {
                 src: '.grunt/theme.html',
                 dest: 'dist/theme.html'
             }
@@ -71,15 +67,22 @@ module.exports = function (grunt) {
 
         // Insert all the JS and CSS into the single html file
         insert: {
-            options: {
-
+            scriptsSample: {
+                src: '.grunt/theme.js',
+                dest: 'dist/sample.html',
+                match: '<!-- !import scripts -->'
             },
-            scripts: {
+            stylesSample: {
+                src: '.grunt/theme.css',
+                dest: 'dist/sample.html',
+                match: '<!-- !import styles -->'
+            },
+            scriptsTumblr: {
                 src: '.grunt/theme.js',
                 dest: 'dist/theme.html',
                 match: '<!-- !import scripts -->'
             },
-            styles: {
+            stylesTumblr: {
                 src: '.grunt/theme.css',
                 dest: 'dist/theme.html',
                 match: '<!-- !import styles -->'
@@ -88,9 +91,6 @@ module.exports = function (grunt) {
 
         // Minify the HTML, currently unused
         htmlmin: {
-            options: {
-
-            },
             theme: {
                 src: 'dist/theme.html',
                 dest: 'dist/theme.min.html'
@@ -100,9 +100,15 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', ['watch']);
 
-    grunt.registerTask('views', ['pug:views', 'copy', 'insert']);
-    grunt.registerTask('scripts', ['concat:scripts', 'copy', 'insert']);
-    grunt.registerTask('styles', ['sass:styles', 'copy', 'insert']);
+    grunt.registerTask('views', ['pug', 'prepare-sample']);
+    grunt.registerTask('scripts', ['concat', 'prepare-sample']);
+    grunt.registerTask('styles', ['sass', 'prepare-sample']);
+
+    grunt.registerTask('prepare-sample', ['copy:sample', 'insert:scriptsSample', 'insert:stylesSample']);
+    grunt.registerTask('prepare-tumblr', ['copy:tumblr', 'insert:scriptsTumblr', 'insert:stylesTumblr']);
     
-    grunt.registerTask('compile', ['pug:views', 'concat:scripts', 'sass:styles', 'copy', 'insert']);
+    // Compile to create a locally viewable version
+    // Tumblr to create a a tumblr-ready version
+    grunt.registerTask('compile', ['pug', 'concat', 'sass', 'prepare-sample']);
+    grunt.registerTask('tumblr', ['pug', 'concat', 'sass', 'prepare-tumblr']);
 };
