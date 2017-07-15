@@ -105,11 +105,11 @@ module.exports = function (grunt) {
                         },
                         {
                             match: '{PhotoURL-500}',
-                            replacement: 'http://lorempixel.com/500/500'
+                            replacement: 'https://68.media.tumblr.com/71faf3456411d636c82f8b0b51b87f6e/tumblr_ot4msyMgBA1wum1vko1_500.jpg'
                         },
                         {
                             match: '{PhotoURL-Panorama}',
-                            replacement: 'http://lorempixel.com/1000/400'
+                            replacement: 'https://68.media.tumblr.com/27417bb967101c7a1a06eb3834a220d5/tumblr_ot4mwisRYW1wum1vko1_500.jpg'
                         },
                         {
                             match: '{Photoset}',
