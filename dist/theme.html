@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        <!-- {block:Description} -->
+            <meta name="description" content="{MetaDescription}" />
+        <!-- {/block:Description} -->
+
+        <!-- Bootstrap  -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+        <!-- Styles -->
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container">
+                <a class="navbar-brand" href="#">Blog name</a>
+                <div class="collapse navbar-collapse" id="navigation">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="#">Ask</a>
+                        <a class="nav-item nav-link" href="#">Submit</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content -->
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>{Title}</h1>
+
+                    <!-- {block:Description} -->
+                        <p id="description">{Description}</p>
+                    <!-- {/block:Description} -->
+                </div>
+            </div>
+
+            <!-- Text post -->
+            <div class="row">
+                <div class="col">
+                    <h2>Text post</h2>
+                    <p>Text post body here</p>
+                </div>
+            </div>
+
+            <!-- Photo post -->
+            <div class="row">
+                <div class="col">
+                    <figure class="figure">
+                        <img class="img-fluid rounded" src="http://lorempixel.com/500/500">
+                        <figcaption class="figure-caption text-right">Photo post</figcaption>
+                    </figure>
+                    
+                    
+                </div>
+            </div>
+
+            <!-- Panorama post -->
+            <div class="row">
+                <div class="col">
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script>
+
+        </script>
+    </body>
+</html>

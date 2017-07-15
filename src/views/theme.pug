@@ -1,0 +1,43 @@
+doctype html
+html
+    head
+        title {Title}
+        link(rel='shortcut icon' href="{Favicon}")
+        link(rel='alternate' type='application/rss+xml' href='{RSS}')
+        meta(name="description" content="{MetaDescription}")
+
+        // Bootstrap
+        link(
+            rel='stylesheet'
+            href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'
+            integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ'
+            crossorigin='anonymous'
+        )
+        script(
+            src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'
+            integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn'
+            crossorigin='anonymous'
+        )
+
+    body
+        // Navigation
+        nav(class='navbar navbar-toggleable-sm navbar-light bg-faded')
+            button(
+                class='navbar-toggler'
+                data-toggle='collapse'
+                data-target='#navigation'
+                aria-controls='navigation'
+                aria-expanded='false'
+                aria-label='Toggle navigation'
+            )
+                span(class='navbar-toggler-icon')
+            
+            div(class='container')
+                a(class='navbar-brand' href='#') Blog name
+                div(class='collapse navbar-collapse' id='navigation')
+                    div(class='navbar-nav')
+                        a(class='nav-item nav-link' href='#') Ask
+                        a(class='nav-item nav-link' href='#') Submit
+        
+        // Content
+        
