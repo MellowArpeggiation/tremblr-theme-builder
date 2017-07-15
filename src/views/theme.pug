@@ -5,8 +5,20 @@ html
         link(rel='shortcut icon' href="{Favicon}")
         link(rel='alternate' type='application/rss+xml' href='{RSS}')
         meta(name="description" content="{MetaDescription}")
+        
+        //- jQuery
+        script(
+            src='https://code.jquery.com/jquery-3.2.1.min.js'
+            integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
+            crossorigin='anonymous'
+        )
 
-        // Bootstrap
+        //- Tether
+        script(
+            src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        )
+
+        //- Bootstrap
         link(
             rel='stylesheet'
             href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'
@@ -43,6 +55,19 @@ html
                         a(class='nav-item nav-link' href='#') Submit
         
         //- Content
+        div(class='container')
+            // {block:Posts}
+            include post-text.pug
+            include post-photo.pug
+            include post-panorama.pug
+            include post-photoset.pug
+            include post-quote.pug
+            include post-link.pug
+            include post-chat.pug
+            include post-video.pug
+            include post-audio.pug
+            if tumbl
+            // {/block:Posts}
         
         //- Insert scripts, uses custom grunt insert directive
         script
