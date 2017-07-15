@@ -13,5 +13,9 @@ block content
 
     ul(class='list-group list-group-flush')
         // {block:Lines}
-        li(class='list-group-item') {Line}
+        li(class='list-group-item')
+            // {block:Label}
+            span {Label} 
+            // {/block:Label}
+            | {Line}
         // {/block:Lines}
