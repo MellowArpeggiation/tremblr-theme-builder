@@ -35,21 +35,23 @@ module.exports = function (grunt) {
                 dest: '.grunt/temp.html'
             }
         },
-        
-        // Concatenate javascript into a single file
-        concat: {
+
+        // Concatenates and minifies the Javascript
+        uglify: {
             scripts: {
-                src: ['src/scripts/**/*.js'],
-                dest: '.grunt/theme.js'
+                files: {
+                    '.grunt/theme.min.js': ['src/scripts/**/*.js']
+                }
             }
         },
 
         // Compile sass to css
         sass: {
+            options: {
+                quiet: false,
+                outputStyle: 'compressed'
+            },
             styles: {
-                options: {
-                    quiet: false
-                },
                 files: {
                     '.grunt/theme.css': 'src/styles/theme.scss'
                 }
@@ -67,7 +69,7 @@ module.exports = function (grunt) {
         // Insert all the JS and CSS into the single html file
         insert: {
             scripts: {
-                src: '.grunt/theme.js',
+                src: '.grunt/theme.min.js',
                 dest: '.grunt/theme.html',
                 match: '<!-- !import scripts -->'
             },
@@ -94,6 +96,10 @@ module.exports = function (grunt) {
                         {
                             match: '{Description}',
                             replacement: 'This is a sample blog'
+                        },
+                        {
+                            match: '{Favicon}',
+                            replacement: 'https://assets.tumblr.com/images/default_avatar/cube_closed_128.png'
                         },
                         {
                             match: '{Body}',
@@ -149,21 +155,13 @@ module.exports = function (grunt) {
                 src: '.grunt/theme.html',
                 dest: 'dist/theme.html'
             }
-        },
-
-        // Minify the HTML, currently unused
-        htmlmin: {
-            theme: {
-                src: 'dist/theme.html',
-                dest: 'dist/theme.min.html'
-            }
         }
     });
 
     grunt.registerTask('default', ['watch']);
 
     grunt.registerTask('views', ['pug', 'prepare-sample']);
-    grunt.registerTask('scripts', ['concat', 'prepare-sample']);
+    grunt.registerTask('scripts', ['uglify', 'prepare-sample']);
     grunt.registerTask('styles', ['sass', 'prepare-sample']);
 
     grunt.registerTask('prepare-sample', ['copy', 'insert', 'replace:sample']);
@@ -171,6 +169,6 @@ module.exports = function (grunt) {
     
     // Compile to create a locally viewable version
     // Tumblr to create a a tumblr-ready version
-    grunt.registerTask('compile', ['pug', 'concat', 'sass', 'prepare-sample']);
-    grunt.registerTask('tumblr', ['pug', 'concat', 'sass', 'prepare-tumblr']);
+    grunt.registerTask('compile', ['pug', 'uglify', 'sass', 'prepare-sample']);
+    grunt.registerTask('tumblr', ['pug', 'uglify', 'sass', 'prepare-tumblr']);
 };
