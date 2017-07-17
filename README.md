@@ -1,4 +1,7 @@
 # Tremblr theme builder
+Ever wanted to build a Tumblr theme, but want to use your own preprocessors, and don't like the single file for EVERYTHING architecture? This is the project for you!
+
+No longer will you have to spend hours gawking at your own code, wondering where anything is amongst a gargantuan 2,000 line spaghetti mess. Clean and organised is the key to good design!
 
 ## How to compile
 1. Install [Node.js](https://nodejs.org/en/download/current/)
