@@ -39,27 +39,26 @@ html
             // {CustomCSS}
     body
         //- Navigation
-        nav(class='navbar navbar-toggleable-sm navbar-light bg-faded')
-            button(
-                class='navbar-toggler'
+        nav.navbar.navbar-toggleable-sm.navbar-light.bg-faded
+            button.navbar-toggler(
                 data-toggle='collapse'
                 data-target='#navigation'
                 aria-controls='navigation'
                 aria-expanded='false'
                 aria-label='Toggle navigation'
             )
-                span(class='navbar-toggler-icon')
+                span.navbar-toggler-icon
             
-            div(class='container')
-                a(class='navbar-brand' href='#') {Title}
-                div(class='collapse navbar-collapse' id='navigation')
-                    div(class='navbar-nav')
-                        a(class='nav-item nav-link' href='#') Ask
-                        a(class='nav-item nav-link' href='#') Submit
+            div.container
+                a.navbar-brand(href='#') {Title}
+                div#navigation.collapse.navbar-collapse
+                    div.navbar-nav
+                        a.nav-item.nav-link(href='#') Ask
+                        a.nav-item.nav-link(href='#') Submit
         
         //- Content
-        div(class='container')
-            div(class='row')
+        div.container
+            div.row
                 // {block:Posts}
                 include post-text.pug
                 include post-photo.pug

@@ -6,11 +6,11 @@ append post
     // {/block:Link}
 
 block content
-    h3(class='card-header')
+    h3.card-header
         //- Is a literal, as it requires a weird interpolated block
         <a href="{URL}" {Target}>{Name}</a>
 
     // {block:Description}
-    div(class='card-block')
-        p(class='card-text') {Description}
+    div.card-block
+        p.card-text {Description}
     // {/block:Description}
