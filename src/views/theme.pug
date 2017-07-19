@@ -49,16 +49,16 @@ html
             )
                 span.navbar-toggler-icon
             
-            div.container
+            .container
                 a.navbar-brand(href='#') {Title}
-                div#navigation.collapse.navbar-collapse
-                    div.navbar-nav
+                #navigation.collapse.navbar-collapse
+                    .navbar-nav
                         a.nav-item.nav-link(href='#') Ask
                         a.nav-item.nav-link(href='#') Submit
         
         //- Content
-        div.container
-            div.row
+        .container
+            .row
                 // {block:Posts}
                 include post-text.pug
                 include post-photo.pug
