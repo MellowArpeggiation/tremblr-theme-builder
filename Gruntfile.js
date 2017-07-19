@@ -71,12 +71,12 @@ module.exports = function (grunt) {
             scripts: {
                 src: '.grunt/theme.min.js',
                 dest: '.grunt/theme.html',
-                match: '<!-- !import scripts -->'
+                match: '<!-- !import scripts-->'
             },
             styles: {
                 src: '.grunt/theme.css',
                 dest: '.grunt/theme.html',
-                match: '<!-- !import styles -->'
+                match: '<!-- !import styles-->'
             }
         },
 
@@ -90,8 +90,21 @@ module.exports = function (grunt) {
                     usePrefix: false,
                     patterns: [
                         {
+                            match: '<!-- {CustomCSS}-->',
+                            replacement: ''
+                        },
+                        {
                             match: '{Title}',
-                            replacement: 'Lorem ipsum'
+                            replacement: (function () {
+                                // Create an anonymous function with closured values
+
+                                var i = 0;
+                                var strings = ['Blog Title', 'Blog Title', 'This is a text post', 'This is a chat post'];
+
+                                return function () {
+                                    return strings[i++];
+                                };
+                            })()
                         },
                         {
                             match: '{Description}',
