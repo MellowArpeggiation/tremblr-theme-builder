@@ -15,7 +15,7 @@
         "eqeqeq": "error",
         "semi": "error",
         "comma-dangle": "error",
-        "curly": ["error", "multi"],
+        "curly": ["error", "multi-line"],
 
         "no-unused-vars": "warn",
         "space-before-blocks": "warn",
