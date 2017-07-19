@@ -1,6 +1,38 @@
 // Gruntfile
 
 module.exports = function (grunt) {
+    // Read in the replacement data structure and convert it into an array of
+    // match: {String}
+    // replacement: {String|Function}
+    var replaceJSON = grunt.file.readJSON('replacements.json');
+    var patterns = [];
+
+    for (var key in replaceJSON) {
+        var replacement = replaceJSON[key];
+
+        // Check if the replacement is an array of strings
+        if (Array.isArray(replacement)) {
+            replacement = (function () {
+                // Create an anonymous function with closured values
+
+                var i = 0;
+                var strings = replacement;
+
+                return function () {
+                    return strings[i++];
+                };
+            })();
+        }
+
+        var pattern = {
+            match: key,
+            replacement: replacement
+        };
+
+        patterns.push(pattern);
+    }
+
+    // Load all the included grunt tasks, defined by the init
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
@@ -10,7 +42,7 @@ module.exports = function (grunt) {
         watch: {
             // Watch for changes to the grunt configuration
             config: {
-                files: ['Gruntfile.js']
+                files: ['Gruntfile.js', 'replacements.json']
             },
 
             // Check for changes in any files and run compile
@@ -88,65 +120,8 @@ module.exports = function (grunt) {
             sample: {
                 options: {
                     usePrefix: false,
-                    patterns: [
-                        {
-                            match: '<!-- {CustomCSS}-->',
-                            replacement: ''
-                        },
-                        {
-                            match: '{Title}',
-                            replacement: (function () {
-                                // Create an anonymous function with closured values
-
-                                var i = 0;
-                                var strings = ['Blog Title', 'Blog Title', 'This is a text post', 'This is a chat post'];
-
-                                return function () {
-                                    return strings[i++];
-                                };
-                            })()
-                        },
-                        {
-                            match: '{Description}',
-                            replacement: 'This is a sample blog'
-                        },
-                        {
-                            match: '{Favicon}',
-                            replacement: 'https://assets.tumblr.com/images/default_avatar/cube_closed_128.png'
-                        },
-                        {
-                            match: '{Body}',
-                            replacement: 'Lorem ipsum, dolor sit amet'
-                        },
-                        {
-                            match: '{Caption}',
-                            replacement: 'This image has this caption'
-                        },
-                        {
-                            match: '{PhotoURL-500}',
-                            replacement: 'https://68.media.tumblr.com/71faf3456411d636c82f8b0b51b87f6e/tumblr_ot4msyMgBA1wum1vko1_500.jpg'
-                        },
-                        {
-                            match: '{PhotoURL-Panorama}',
-                            replacement: 'https://68.media.tumblr.com/27417bb967101c7a1a06eb3834a220d5/tumblr_ot4mwisRYW1wum1vko1_500.jpg'
-                        },
-                        {
-                            match: '{Photoset}',
-                            replacement: '<div id="photoset_163011928188" class="html_photoset"><iframe id="photoset_iframe_163011928188" name="photoset_iframe_163011928188" class="photoset" scrolling="no" frameborder="0" height="511" width="100%" style="border:0px; background-color:transparent; overflow:hidden;" src="https://www.tumblr.com/post/163011928188/photoset_iframe/tremblrtheme/tumblr_ot4mv2tChL1wum1vk/0/false"></iframe></div>'
-                        },
-                        {
-                            match: '{Quote}',
-                            replacement: 'It does not matter how slow you go so long as you do not stop.'
-                        },
-                        {
-                            match: '{Source}',
-                            replacement: 'Confucious'
-                        },
-                        {
-                            match: '{Name}',
-                            replacement: 'Link post'
-                        }
-                    ]
+                    // Use the constructed patterns array for replacements
+                    patterns: patterns
                 },
                 src: '.grunt/theme.html',
                 dest: 'dist/sample.html'
