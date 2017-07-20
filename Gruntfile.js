@@ -1,5 +1,7 @@
 // Gruntfile
 
+var path = require('path');
+
 module.exports = function (grunt) {
     // Read in the replacement data structure and convert it into an array of
     // match: {String}
@@ -30,6 +32,14 @@ module.exports = function (grunt) {
         };
 
         patterns.push(pattern);
+    }
+
+    var scriptsBuild = require('./src/scripts/build.js');
+
+    function prefixArray(prefix, array) {
+        return array.map(function (d) {
+            return path.normalize(prefix + d);
+        });
     }
 
     // Load all the included grunt tasks, defined by the init
@@ -72,7 +82,8 @@ module.exports = function (grunt) {
         uglify: {
             scripts: {
                 files: {
-                    '.grunt/theme.min.js': ['src/scripts/**/*.js']
+                    // We use a build file so we can define the order
+                    '.grunt/theme.min.js': prefixArray('src/scripts/', scriptsBuild.concat)
                 }
             }
         },
