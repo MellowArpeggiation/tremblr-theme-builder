@@ -1,1 +1,8 @@
+// Set variables before loading BS to override !defaults
+@import "variables";
+
+// Load in Bootstrap v4.0.0-alpha.6
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Import our code last to set priority
 @import "bootstrap-fixes";
