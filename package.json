@@ -1,7 +1,8 @@
 {
-  "name": "tremblr-theme",
+  "name": "tremblr-theme-builder",
   "version": "1.0.0",
-  "description": "A snazzy bootstrap based Tumblr theme",
+  "description": "A snazzy bootstrap based Tumblr theme builder",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MellowArpeggiation/tremblr-theme.git"
@@ -12,6 +13,7 @@
   },
   "homepage": "https://github.com/MellowArpeggiation/tremblr-theme#readme",
   "devDependencies": {
+    "bootstrap": "4.0.0-alpha.6",
     "grunt": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-pug": "^1.0.0",
