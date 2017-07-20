@@ -20,7 +20,7 @@ html
 
         //- Navigation
         nav.navbar.navbar-toggleable.navbar-light.bg-faded.sticky-top
-            button.navbar-toggler.navbar-toggler-left(
+            button.navbar-toggler.navbar-toggler-right(
                 data-toggle='collapse'
                 data-target='#navigation'
                 aria-controls='navigation'
@@ -29,12 +29,13 @@ html
             )
                 span.navbar-toggler-icon
             
-            .container
-                a.navbar-brand(href='#') &nbsp;
-                #navigation.collapse.navbar-collapse
+            span.hidden-sm-up.nav-item.nav-link.float-right &nbsp;
+            #navigation.collapse.navbar-collapse
+                .container
                     .navbar-nav
                         a.nav-item.nav-link(href='#') Ask
                         a.nav-item.nav-link(href='#') Submit
+                        
         
         //- Content
         .container
