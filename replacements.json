@@ -1,11 +1,23 @@
 {
     "<!-- {CustomCSS}-->": "",
 
-    "{Title}": ["Blog Title", "Blog Title", "This is a text post", "This is a chat post"],
-    "{Description}": "This is a sample blog",
+    "{Title}": [
+        "Blog Title",
+        "Blog Title",
+        "This is a text post",
+        "This is a chat post"
+    ],
+    "{Description}": [
+        "This is what your link posts will look like",
+        "This is a sample blog theme, feel free to make it your own!"
+    ],
     "{Favicon}": "https://assets.tumblr.com/images/default_avatar/cube_closed_128.png",
-    "{Body}": "Lorem ipsum, dolor sit amet",
-    "{Caption}": "This image has this caption",
+    "{Body}": "This is what your text posts will look like, looking good!",
+    "{Caption}": [
+        "This is what your regular photo posts will look like",
+        "this is what your panorama posts will look like",
+        "This is what your photoset posts will look like, multiple photos!"
+    ],
 
     "{PhotoURL-500}": "https://68.media.tumblr.com/71faf3456411d636c82f8b0b51b87f6e/tumblr_ot4msyMgBA1wum1vko1_500.jpg",
     "{PhotoURL-Panorama}": "https://68.media.tumblr.com/27417bb967101c7a1a06eb3834a220d5/tumblr_ot4mwisRYW1wum1vko1_500.jpg",
@@ -13,5 +25,7 @@
 
     "{Quote}": "It does not matter how slow you go so long as you do not stop.",
     "{Source}": "Confucious",
-    "{Name}": "Link post"
+    "{Name}": "This is a link post",
+    "{Label}": "George:",
+    "{Line}": "I'm here to tell you that this is what your chat posts will look like"
 }
