@@ -30,7 +30,7 @@ There is currently no preprocessor support for Javascript, so nothing too fancy 
 In your pug document, add in the markup tag with a visible comment, for example, use:
 ```pug
 // {block:Posts}
-div(class='posts')
+.posts
     p This is where all posts go!
 // {/block:Posts}
 ```
