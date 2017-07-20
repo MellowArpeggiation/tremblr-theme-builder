@@ -38,9 +38,14 @@ html
             // !import styles
             // {CustomCSS}
     body
+
+        .jumbotron
+            .container
+                h1 {Title}
+
         //- Navigation
-        nav.navbar.navbar-toggleable-sm.navbar-light.bg-faded
-            button.navbar-toggler(
+        nav.navbar.navbar-toggleable.navbar-light.bg-faded.sticky-top
+            button.navbar-toggler.navbar-toggler-left(
                 data-toggle='collapse'
                 data-target='#navigation'
                 aria-controls='navigation'
@@ -50,7 +55,7 @@ html
                 span.navbar-toggler-icon
             
             .container
-                a.navbar-brand(href='#') {Title}
+                a.navbar-brand(href='#') &nbsp;
                 #navigation.collapse.navbar-collapse
                     .navbar-nav
                         a.nav-item.nav-link(href='#') Ask
