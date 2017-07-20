@@ -47,7 +47,7 @@ module.exports = function (grunt) {
 
             // Check for changes in any files and run compile
             views: {
-                files: ['src/views/**/*.pug'],
+                files: ['src/views/**/*.pug', 'replacements.json'],
                 tasks: ['views']
             },
             scripts: {
