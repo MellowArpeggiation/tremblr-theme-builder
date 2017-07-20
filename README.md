@@ -7,7 +7,13 @@ No longer will you have to spend hours gawking at your own code, wondering where
 1. Install [Node.js](https://nodejs.org/en/download/current/)
 2. Open your command line and run:
    * `npm install`
-   * `npm install -g grunt-cli`
+3. Run the following commands
+   * To run the watcher, which automatically compiles changes into sample.html:
+      * `grunt`
+   * To compile sample.html for viewing:
+      * `grunt compile`
+   * To compile theme.html for submission to Tumblr:
+      * `grunt tumblr`
 
 These commands will install all the necessary node_modules into the project, and the grunt-cli will allow you to run the Grunt worker, which will allow you to see your changes immediately, and also create the final product, with no extra work!
 
