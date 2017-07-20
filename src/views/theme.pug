@@ -8,31 +8,6 @@ html
         meta(name="description" content="{MetaDescription}")
         // {/block:Description}
         
-        //- jQuery
-        script(
-            src='https://code.jquery.com/jquery-3.2.1.min.js'
-            integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
-            crossorigin='anonymous'
-        )
-
-        //- Tether
-        script(
-            src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
-        )
-
-        //- Bootstrap
-        link(
-            rel='stylesheet'
-            href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'
-            integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ'
-            crossorigin='anonymous'
-        )
-        script(
-            src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'
-            integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn'
-            crossorigin='anonymous'
-        )
-
         //- Insert stylesheet, uses custom grunt insert directive
         style
             // !import styles
@@ -75,7 +50,30 @@ html
                 include post-video.pug
                 include post-audio.pug
                 // {/block:Posts}
+
+
+
+        //- All scripts
+
+        //- jQuery
+        script(
+            src='https://code.jquery.com/jquery-3.2.1.min.js'
+            integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
+            crossorigin='anonymous'
+        )
+
+        //- Tether
+        script(
+            src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        )
+
+        //- Bootstrap (scripts only, CSS is compiled by Grunt so we can override variables)
+        script(
+            src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'
+            integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn'
+            crossorigin='anonymous'
+        )
         
-        //- Insert scripts, uses custom grunt insert directive
+        //- Insert custom scripts, uses custom grunt insert directive
         script
             // !import scripts
