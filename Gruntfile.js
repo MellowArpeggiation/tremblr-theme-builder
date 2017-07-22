@@ -3,14 +3,15 @@
 var path = require('path');
 
 module.exports = function (grunt) {
+    // Read in the replacements file for structuring the sample.html
+    var replaceJSON = grunt.file.readJSON('replacements.json');
+    
     // Read in the replacement data structure and convert it into an array of
     // match: {String}
     // replacement: {String|Function}
-    var replaceJSON = grunt.file.readJSON('replacements.json');
     var patterns = [];
-
-    for (var key in replaceJSON) {
-        var replacement = replaceJSON[key];
+    for (var key in replaceJSON.text) {
+        var replacement = replaceJSON.text[key];
 
         // Check if the replacement is an array of strings
         if (Array.isArray(replacement)) {
