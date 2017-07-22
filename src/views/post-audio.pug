@@ -6,6 +6,29 @@ append post
     // {/block:Audio}
 
 block content
+    //- If there is an embedded audio player available
+    // {block:AudioEmbed}
     .card-img-top {AudioEmbed}
+    // {/block:AudioEmbed}
 
-    include components/caption.pug
+    //- If the native audio player is used
+    // {block:AudioPlayer}
+    .card-img-top {AudioPlayer}
+    // {/block:AudioPlayer}
+
+    //- If the audio is from an external source
+    // {block:ExternalAudio}
+    
+    // {/block:ExternalAudio}
+
+
+    
+    .card-block
+        // {block:Caption}
+        p.card-text {Caption}
+        // {/block:Caption}
+
+        //- The playcount for this audio file
+        // {block:PlayCount}
+        p {PlayCountWithLabel}
+        // {/block:PlayCount}
