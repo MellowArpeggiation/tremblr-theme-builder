@@ -35,6 +35,16 @@ module.exports = function (grunt) {
 
         return input;
     }
+
+    // Read in the replacement data, importing the match as regex
+    // match: {Regex}
+    // replacement: {String|Function}
+    for (key in replaceJSON.sample.regex) {
+        samplePatterns.push({
+            match: new RegExp(key, 'g'),
+            replacement: arrayToFunction(replaceJSON.sample.regex[key])
+        });
+    }
     
     // Read in the replacement data structure and convert it into an array of
     // match: {String}
@@ -46,28 +56,18 @@ module.exports = function (grunt) {
         });
     }
 
-    // Read in the replacement data, but import the match as regex instead
-    // match: {Regex}
-    // replacement: {String|Function}
-    for (key in replaceJSON.sample.regex) {
-        samplePatterns.push({
-            match: new RegExp(key, 'g'),
-            replacement: arrayToFunction(replaceJSON.sample.regex[key])
-        });
-    }
-
     // Same as above, but for tumblr replacements
-    for (key in replaceJSON.tumblr.text) {
-        tumblrPatterns.push({
-            match: key,
-            replacement: arrayToFunction(replaceJSON.tumblr.text[key])
-        });
-    }
-
     for (key in replaceJSON.tumblr.regex) {
         tumblrPatterns.push({
             match: new RegExp(key, 'g'),
             replacement: arrayToFunction(replaceJSON.tumblr.regex[key])
+        });
+    }
+
+    for (key in replaceJSON.tumblr.text) {
+        tumblrPatterns.push({
+            match: key,
+            replacement: arrayToFunction(replaceJSON.tumblr.text[key])
         });
     }
 
