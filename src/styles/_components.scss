@@ -1,0 +1,23 @@
+// Just two columns for main content cards
+.posts {
+    &.card-columns {
+        @include media-breakpoint-up(sm) {
+            column-count: 2;
+        }
+    }
+
+    .video-container {
+        position: relative;
+        height: 0;
+        // Make the container the size of a 16/9 video
+        padding-bottom: 100% / (16 / 9);
+
+        > iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

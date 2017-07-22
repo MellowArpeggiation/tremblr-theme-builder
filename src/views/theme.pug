@@ -33,13 +33,16 @@ html
             #navigation.collapse.navbar-collapse
                 .container
                     .navbar-nav
-                        a.nav-item.nav-link(href='#') Ask
-                        a.nav-item.nav-link(href='#') Submit
-                        
+                        // {block:AskEnabled}
+                        a.nav-item.nav-link(href='#') {AskLabel}
+                        // {/block:AskEnabled}
+                        // {block:SubmissionsEnabled}
+                        a.nav-item.nav-link(href='#') {SubmitLabel}
+                        // {/block:SubmissionsEnabled}
         
         //- Content
-        .container
-            .row.mb-5
+        .container.mt-5
+            .card-columns.posts
                 // {block:Posts}
                 include post-text.pug
                 include post-photo.pug
