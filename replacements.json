@@ -1,78 +1,84 @@
 {
-    "text": {
-        "<!-- {CustomCSS}-->": "",
-
-        "{TitleFont}": "Gibson",
-        "{TitleFontWeight}": "lighter",
-        "{BackgroundColor}": "#fff",
-        "{TitleColor}": "#ccc",
-        "{AccentColor}": "#00f",
-        "{AvatarShape}": "square",
-        
-        "{Favicon}": "https://assets.tumblr.com/images/default_avatar/cube_closed_128.png",
-
-        "{CurrentPage}": 1,
-        "{TotalPages}": 1,
-        "{SubmitLabel}": "Submit",
-        "{AskLabel}": "Ask",
-
-        "{DayOfWeek}": ["Monday", "Wednesday", "Sunday", "Saturday", "Friday", "Tuesday", "Thursday"],
-        "{ShortDayOfWeek}": ["Mon", "Wed", "Sun", "Sat", "Fri", "Tue", "Thu"],
-        "{DayOfMonth}": ["20", "12", "3", "23", "10", "16", "4", "1"],
-        "{DayOfMonthWithZero}": ["20", "12", "03", "23", "10", "16", "04", "01"],
-        "{DayOfMonthSuffix}": ["th", "th", "rd", "rd", "th", "th", "th", "st"],
-        "{ShortMonth}": ["Jan", "Feb", "Jun", "Dec"],
-        "{MonthNumber}": ["1", "2", "6", "12"],
-        "{MonthNumberWithZero}": ["01", "02", "06", "12"],
-        "{Year}": "2017",
-        "{ShortYear}": "17",
-        "{AmPm}": ["am", "pm"],
-        "{CapitalAmPm}": ["AM", "PM"],
-        "{12Hour}": ["2", "4", "12", "5", "3"],
-        "{24Hour}": ["23", "16", "12", "3", "1"],
-        "{12HourWithZero}": ["02", "04", "12", "05", "03"],
-        "{24HourWithZero}": ["23", "16", "12", "03", "01"],
-        "{Minutes}": ["23", "53", "1", "5", "45", "0"],
-        "{Seconds}": ["4", "23", "59", "1", "0"],
-        "{Timestamp}": "1172705619",
-        
-        "{Title}": [
-            "Blog Title",
-            "Blog Title",
-            "This is a text post",
-            "This is a chat post"
-        ],
-        "{Description}": [
-            "This is what your link posts will look like",
-            "This is a sample blog theme, feel free to make it your own!"
-        ],
-        "{Body}": "This is what your text posts will look like, looking good!",
-        "{Caption}": [
-            "This is what your regular photo posts will look like",
-            "This is what your panorama posts will look like",
-            "This is what your photoset posts will look like, multiple photos!",
-            "This is a video post",
-            "This is an audio post"
-        ],
+    "sample": {
+        "text": {
+            "<!-- {CustomCSS}-->": "",
     
-        "{PhotoURL-500}": "https://68.media.tumblr.com/71faf3456411d636c82f8b0b51b87f6e/tumblr_ot4msyMgBA1wum1vko1_500.jpg",
-        "{PhotoURL-Panorama}": "https://68.media.tumblr.com/27417bb967101c7a1a06eb3834a220d5/tumblr_ot4mwisRYW1wum1vko1_500.jpg",
-        "{Photoset}": "<div id=\"photoset_163011928188\" class=\"html_photoset\"><iframe id=\"photoset_iframe_163011928188\" name=\"photoset_iframe_163011928188\" class=\"photoset\" scrolling=\"no\" frameborder=\"0\" height=\"511\" width=\"100%\" style=\"border:0px; background-color:transparent; overflow:hidden;\" src=\"https://www.tumblr.com/post/163011928188/photoset_iframe/tremblrtheme/tumblr_ot4mv2tChL1wum1vk/0/false\"></iframe></div>",
+            "{TitleFont}": "Gibson",
+            "{TitleFontWeight}": "lighter",
+            "{BackgroundColor}": "#fff",
+            "{TitleColor}": "#ccc",
+            "{AccentColor}": "#00f",
+            "{AvatarShape}": "square",
+            
+            "{Favicon}": "https://assets.tumblr.com/images/default_avatar/cube_closed_128.png",
     
-        "{Video-700}": "<iframe width=\"700\" height=\"394\" id=\"youtube_iframe\" src=\"https://www.youtube.com/embed/e-IWRmpefzE?feature=oembed&amp;enablejsapi=1&amp;origin=https://safe.txmblr.com&amp;wmode=opaque\" frameborder=\"0\" allowfullscreen=\"\"></iframe>",
-        "{AudioEmbed}": "<iframe class=\"spotify_audio_player\" src=\"https://embed.spotify.com/?uri=spotify%3Atrack%3A27Sb5HdiMh9k1z5oPI9r3B&amp;view=coverart\" frameborder=\"0\" allowtransparency=\"true\" width=\"500\" height=\"580\"></iframe>",
-        "{PlayCountWithLabel}": "12,309 plays",
-
-        "{Quote}": "It does not matter how slow you go so long as you do not stop.",
-        "{Source}": "Confucious",
-        "{Name}": "This is a link post",
-        "{Label}": ["George:"],
-        "{Line}": "I'm here to tell you that this is what your chat posts will look like",
-        "{Alt}": ["odd", "even"],
-
-        "{Tag}": ["text post", "photo", "panorama", "photoset", "quote", "link", "chat", "video", "audio"]
+            "{CurrentPage}": 1,
+            "{TotalPages}": 1,
+    
+            "{DayOfWeek}": ["Monday", "Wednesday", "Sunday", "Saturday", "Friday", "Tuesday", "Thursday"],
+            "{ShortDayOfWeek}": ["Mon", "Wed", "Sun", "Sat", "Fri", "Tue", "Thu"],
+            "{DayOfMonth}": ["20", "12", "3", "23", "10", "16", "4", "1"],
+            "{DayOfMonthWithZero}": ["20", "12", "03", "23", "10", "16", "04", "01"],
+            "{DayOfMonthSuffix}": ["th", "th", "rd", "rd", "th", "th", "th", "st"],
+            "{ShortMonth}": ["Jan", "Feb", "Jun", "Dec"],
+            "{MonthNumber}": ["1", "2", "6", "12"],
+            "{MonthNumberWithZero}": ["01", "02", "06", "12"],
+            "{Year}": "2017",
+            "{ShortYear}": "17",
+            "{AmPm}": ["am", "pm"],
+            "{CapitalAmPm}": ["AM", "PM"],
+            "{12Hour}": ["2", "4", "12", "5", "3"],
+            "{24Hour}": ["23", "16", "12", "3", "1"],
+            "{12HourWithZero}": ["02", "04", "12", "05", "03"],
+            "{24HourWithZero}": ["23", "16", "12", "03", "01"],
+            "{Minutes}": ["23", "53", "1", "5", "45", "0"],
+            "{Seconds}": ["4", "23", "59", "1", "0"],
+            "{Timestamp}": "1172705619",
+            
+            "{Title}": [
+                "Blog Title",
+                "Blog Title",
+                "This is a text post",
+                "This is a chat post"
+            ],
+            "{Description}": [
+                "This is what your link posts will look like",
+                "This is a sample blog theme, feel free to make it your own!"
+            ],
+            "{Caption}": [
+                "This is what your regular photo posts will look like",
+                "This is what your panorama posts will look like",
+                "This is what your photoset posts will look like, multiple photos!",
+                "This is a video post",
+                "This is an audio post"
+            ],
+        
+            "{PhotoURL-500}": "https://68.media.tumblr.com/71faf3456411d636c82f8b0b51b87f6e/tumblr_ot4msyMgBA1wum1vko1_500.jpg",
+            "{PhotoURL-Panorama}": "https://68.media.tumblr.com/27417bb967101c7a1a06eb3834a220d5/tumblr_ot4mwisRYW1wum1vko1_500.jpg",
+            "{Photoset}": "<div id=\"photoset_163011928188\" class=\"html_photoset\"><iframe id=\"photoset_iframe_163011928188\" name=\"photoset_iframe_163011928188\" class=\"photoset\" scrolling=\"no\" frameborder=\"0\" height=\"511\" width=\"100%\" style=\"border:0px; background-color:transparent; overflow:hidden;\" src=\"https://www.tumblr.com/post/163011928188/photoset_iframe/tremblrtheme/tumblr_ot4mv2tChL1wum1vk/0/false\"></iframe></div>",
+        
+            "{Video-700}": "<iframe width=\"700\" height=\"394\" id=\"youtube_iframe\" src=\"https://www.youtube.com/embed/e-IWRmpefzE?feature=oembed&amp;enablejsapi=1&amp;origin=https://safe.txmblr.com&amp;wmode=opaque\" frameborder=\"0\" allowfullscreen=\"\"></iframe>",
+            "{AudioEmbed}": "<iframe class=\"spotify_audio_player\" src=\"https://embed.spotify.com/?uri=spotify%3Atrack%3A27Sb5HdiMh9k1z5oPI9r3B&amp;view=coverart\" frameborder=\"0\" allowtransparency=\"true\" width=\"500\" height=\"580\"></iframe>",
+            "{PlayCountWithLabel}": "12,309 plays",
+    
+            "{Quote}": "It does not matter how slow you go so long as you do not stop.",
+            "{Source}": "Confucious",
+            "{Name}": "This is a link post",
+            "{Label}": ["George:"],
+            "{Line}": "I'm here to tell you that this is what your chat posts will look like",
+            "{Alt}": ["odd", "even"],
+    
+            "{Tag}": ["text post", "photo", "panorama", "photoset", "quote", "link", "chat", "video", "audio"]
+        },
+        "regex": {
+            "\\{[^:}]*\\}\\((.*)\\)": "$1",
+            "<!-- \\{block:AudioPlayer\\}-->(.*?)<!-- \\{/block:AudioPlayer\\}-->": ""
+        }
     },
-    "regex": {
-        "<!-- \\{block:AudioPlayer\\}-->(.*?)<!-- \\{/block:AudioPlayer\\}-->": ""
+    "tumblr": {
+        "text": {
+            "<!-- ": "",
+            "-->": ""
+        }
     }
 }

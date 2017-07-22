@@ -5,7 +5,8 @@ var path = require('path');
 module.exports = function (grunt) {
     // Read in the replacements file for structuring the sample.html
     var replaceJSON = grunt.file.readJSON('replacements.json'),
-        patterns = [],
+        samplePatterns = [],
+        tumblrPatterns = [],
         key,
         replacement;
 
@@ -38,20 +39,35 @@ module.exports = function (grunt) {
     // Read in the replacement data structure and convert it into an array of
     // match: {String}
     // replacement: {String|Function}
-    for (key in replaceJSON.text) {
-        patterns.push({
+    for (key in replaceJSON.sample.text) {
+        samplePatterns.push({
             match: key,
-            replacement: arrayToFunction(replaceJSON.text[key])
+            replacement: arrayToFunction(replaceJSON.sample.text[key])
         });
     }
 
     // Read in the replacement data, but import the match as regex instead
     // match: {Regex}
     // replacement: {String|Function}
-    for (key in replaceJSON.regex) {
-        patterns.push({
+    for (key in replaceJSON.sample.regex) {
+        samplePatterns.push({
             match: new RegExp(key, 'g'),
-            replacement: arrayToFunction(replaceJSON.regex[key])
+            replacement: arrayToFunction(replaceJSON.sample.regex[key])
+        });
+    }
+
+    // Same as above, but for tumblr replacements
+    for (key in replaceJSON.tumblr.text) {
+        tumblrPatterns.push({
+            match: key,
+            replacement: arrayToFunction(replaceJSON.tumblr.text[key])
+        });
+    }
+
+    for (key in replaceJSON.tumblr.regex) {
+        tumblrPatterns.push({
+            match: new RegExp(key, 'g'),
+            replacement: arrayToFunction(replaceJSON.tumblr.regex[key])
         });
     }
 
@@ -153,7 +169,7 @@ module.exports = function (grunt) {
                 options: {
                     usePrefix: false,
                     // Use the constructed patterns array for replacements
-                    patterns: patterns
+                    patterns: samplePatterns
                 },
                 src: '.grunt/theme.html',
                 dest: 'dist/sample.html'
@@ -161,16 +177,7 @@ module.exports = function (grunt) {
             tumblr: {
                 options: {
                     usePrefix: false,
-                    patterns: [
-                        {
-                            match: '<!-- ',
-                            replacement: ''
-                        },
-                        {
-                            match: '-->',
-                            replacement: ''
-                        }
-                    ]
+                    patterns: tumblrPatterns
                 },
                 src: '.grunt/theme.html',
                 dest: 'dist/theme.html'
