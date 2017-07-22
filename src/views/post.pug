@@ -1,3 +1,27 @@
 block post
     .card.mb-4
         block content
+
+        .card-footer.text-muted
+            // {block:Date}
+            .float-right
+                | {DayOfMonth}{DayOfMonthSuffix} {ShortMonth} {Year}
+
+                //- Rendered for the first post for a certain date
+                // {block:NewDayDate}
+                
+                // {/block:NewDayDate}
+
+                //- Rendered for every subsequent post
+                // {block:SameDayDate}
+
+                // {/block:SameDayDate}
+            // {/block:Date}
+
+            // {block:HasTags}
+            // {block:Tags}
+            a.tag(href="{TagURL}") \#{Tag}
+            // {/block:Tags}
+            // {/block:HasTags}
+
+            | &nbsp;
