@@ -4,35 +4,55 @@ var path = require('path');
 
 module.exports = function (grunt) {
     // Read in the replacements file for structuring the sample.html
-    var replaceJSON = grunt.file.readJSON('replacements.json');
-    
-    // Read in the replacement data structure and convert it into an array of
-    // match: {String}
-    // replacement: {String|Function}
-    var patterns = [];
-    for (var key in replaceJSON.text) {
-        var replacement = replaceJSON.text[key];
+    var replaceJSON = grunt.file.readJSON('replacements.json'),
+        patterns = [],
+        key,
+        replacement;
 
+    /**
+     * @desc Parses an input array into a function that returns each element sequentially when called
+     *       If the input is a regular string, just return that
+     * @param {String|Array} input 
+     * @returns {String|Function}
+     */
+    function arrayToFunction(input) {
         // Check if the replacement is an array of strings
-        if (Array.isArray(replacement)) {
-            replacement = (function () {
-                // Create an anonymous function with closured values
+        if (Array.isArray(input)) {
+            return (function () {
+                // Return an anonymous function with closured values
 
                 var i = 0;
-                var strings = replacement;
+                var strings = input;
 
                 return function () {
-                    return strings[i++];
+                    var string = strings[i++];
+                    if (i === strings.length) i = 0;
+                    return string;
                 };
             })();
         }
 
-        var pattern = {
+        return input;
+    }
+    
+    // Read in the replacement data structure and convert it into an array of
+    // match: {String}
+    // replacement: {String|Function}
+    for (key in replaceJSON.text) {
+        patterns.push({
             match: key,
-            replacement: replacement
-        };
+            replacement: arrayToFunction(replaceJSON.text[key])
+        });
+    }
 
-        patterns.push(pattern);
+    // Read in the replacement data, but import the match as regex instead
+    // match: {Regex}
+    // replacement: {String|Function}
+    for (key in replaceJSON.regex) {
+        patterns.push({
+            match: new RegExp(key, 'g'),
+            replacement: arrayToFunction(replaceJSON.regex[key])
+        });
     }
 
     var scriptsBuild = require('./src/scripts/build.js');

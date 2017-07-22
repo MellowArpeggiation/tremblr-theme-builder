@@ -15,6 +15,26 @@
         "{TotalPages}": 1,
         "{SubmitLabel}": "Submit",
         "{AskLabel}": "Ask",
+
+        "{DayOfWeek}": ["Monday", "Wednesday", "Sunday", "Saturday", "Friday", "Tuesday", "Thursday"],
+        "{ShortDayOfWeek}": ["Mon", "Wed", "Sun", "Sat", "Fri", "Tue", "Thu"],
+        "{DayOfMonth}": ["20", "12", "3", "23", "10", "16", "4", "1"],
+        "{DayOfMonthWithZero}": ["20", "12", "03", "23", "10", "16", "04", "01"],
+        "{DayOfMonthSuffix}": ["th", "th", "rd", "rd", "th", "th", "th", "st"],
+        "{ShortMonth}": ["Jan", "Feb", "Jun", "Dec"],
+        "{MonthNumber}": ["1", "2", "6", "12"],
+        "{MonthNumberWithZero}": ["01", "02", "06", "12"],
+        "{Year}": "2017",
+        "{ShortYear}": "17",
+        "{AmPm}": ["am", "pm"],
+        "{CapitalAmPm}": ["AM", "PM"],
+        "{12Hour}": ["2", "4", "12", "5", "3"],
+        "{24Hour}": ["23", "16", "12", "3", "1"],
+        "{12HourWithZero}": ["02", "04", "12", "05", "03"],
+        "{24HourWithZero}": ["23", "16", "12", "03", "01"],
+        "{Minutes}": ["23", "53", "1", "5", "45", "0"],
+        "{Seconds}": ["4", "23", "59", "1", "0"],
+        "{Timestamp}": "1172705619",
         
         "{Title}": [
             "Blog Title",
@@ -41,11 +61,18 @@
     
         "{Video-700}": "<iframe width=\"700\" height=\"394\" id=\"youtube_iframe\" src=\"https://www.youtube.com/embed/e-IWRmpefzE?feature=oembed&amp;enablejsapi=1&amp;origin=https://safe.txmblr.com&amp;wmode=opaque\" frameborder=\"0\" allowfullscreen=\"\"></iframe>",
         "{AudioEmbed}": "<iframe class=\"spotify_audio_player\" src=\"https://embed.spotify.com/?uri=spotify%3Atrack%3A27Sb5HdiMh9k1z5oPI9r3B&amp;view=coverart\" frameborder=\"0\" allowtransparency=\"true\" width=\"500\" height=\"580\"></iframe>",
-    
+        "{PlayCountWithLabel}": "12,309 plays",
+
         "{Quote}": "It does not matter how slow you go so long as you do not stop.",
         "{Source}": "Confucious",
         "{Name}": "This is a link post",
         "{Label}": ["George:"],
-        "{Line}": "I'm here to tell you that this is what your chat posts will look like"
+        "{Line}": "I'm here to tell you that this is what your chat posts will look like",
+        "{Alt}": ["odd", "even"],
+
+        "{Tag}": ["text post", "photo", "panorama", "photoset", "quote", "link", "chat", "video", "audio"]
+    },
+    "regex": {
+        "<!-- \\{block:AudioPlayer\\}-->(.*?)<!-- \\{/block:AudioPlayer\\}-->": ""
     }
 }
