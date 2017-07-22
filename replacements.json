@@ -15,13 +15,18 @@
     "{Body}": "This is what your text posts will look like, looking good!",
     "{Caption}": [
         "This is what your regular photo posts will look like",
-        "this is what your panorama posts will look like",
-        "This is what your photoset posts will look like, multiple photos!"
+        "This is what your panorama posts will look like",
+        "This is what your photoset posts will look like, multiple photos!",
+        "This is a video post",
+        "This is an audio post"
     ],
 
     "{PhotoURL-500}": "https://68.media.tumblr.com/71faf3456411d636c82f8b0b51b87f6e/tumblr_ot4msyMgBA1wum1vko1_500.jpg",
     "{PhotoURL-Panorama}": "https://68.media.tumblr.com/27417bb967101c7a1a06eb3834a220d5/tumblr_ot4mwisRYW1wum1vko1_500.jpg",
     "{Photoset}": "<div id=\"photoset_163011928188\" class=\"html_photoset\"><iframe id=\"photoset_iframe_163011928188\" name=\"photoset_iframe_163011928188\" class=\"photoset\" scrolling=\"no\" frameborder=\"0\" height=\"511\" width=\"100%\" style=\"border:0px; background-color:transparent; overflow:hidden;\" src=\"https://www.tumblr.com/post/163011928188/photoset_iframe/tremblrtheme/tumblr_ot4mv2tChL1wum1vk/0/false\"></iframe></div>",
+
+    "{Video-700}": "<iframe width=\"700\" height=\"394\" id=\"youtube_iframe\" src=\"https://www.youtube.com/embed/e-IWRmpefzE?feature=oembed&amp;enablejsapi=1&amp;origin=https://safe.txmblr.com&amp;wmode=opaque\" frameborder=\"0\" allowfullscreen=\"\"></iframe>",
+    "{AudioEmbed}": "<iframe class=\"spotify_audio_player\" src=\"https://embed.spotify.com/?uri=spotify%3Atrack%3A27Sb5HdiMh9k1z5oPI9r3B&amp;view=coverart\" frameborder=\"0\" allowtransparency=\"true\" width=\"500\" height=\"580\"></iframe>",
 
     "{Quote}": "It does not matter how slow you go so long as you do not stop.",
     "{Source}": "Confucious",
