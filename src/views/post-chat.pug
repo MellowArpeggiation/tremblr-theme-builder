@@ -12,11 +12,11 @@ block content
     // {/block:Title}
 
     ul.list-group.list-group-flush
-        // {block:Lines}
-        li.list-group-item
+        // {block:Lines}[3]
+        li(class='list-group-item {Alt}')
             p
                 // {block:Label}
-                span {Label}(George:) 
+                span {Label} 
                 // {/block:Label}
-                | {Line}(I'm here to tell you that this is what your chat posts will look like)
+                | {Line}
         // {/block:Lines}
