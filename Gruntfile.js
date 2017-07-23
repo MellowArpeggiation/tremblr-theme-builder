@@ -161,6 +161,11 @@ module.exports = function (grunt) {
             }
         },
 
+        // Lints the Javascript before compilation
+        eslint: {
+            target: './src/**/*.js'
+        },
+
         // Concatenates and minifies the Javascript
         uglify: {
             scripts: {
@@ -250,7 +255,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['watch']);
 
     grunt.registerTask('views', ['pug', 'prepare-sample']);
-    grunt.registerTask('scripts', ['uglify', 'prepare-sample']);
+    grunt.registerTask('scripts', ['eslint', 'uglify', 'prepare-sample']);
     grunt.registerTask('styles', ['sass', 'postcss', 'prepare-sample']);
 
     grunt.registerTask('prepare-sample', ['copy', 'insert', 'replace:sample']);
@@ -258,6 +263,6 @@ module.exports = function (grunt) {
     
     // Compile to create a locally viewable version
     // Tumblr to create a a tumblr-ready version
-    grunt.registerTask('compile', ['pug', 'uglify', 'sass', 'postcss', 'prepare-sample']);
-    grunt.registerTask('tumblr', ['pug', 'uglify', 'sass', 'postcss', 'prepare-tumblr']);
+    grunt.registerTask('compile', ['pug', 'eslint', 'uglify', 'sass', 'postcss', 'prepare-sample']);
+    grunt.registerTask('tumblr', ['pug', 'eslint', 'uglify', 'sass', 'postcss', 'prepare-tumblr']);
 };
