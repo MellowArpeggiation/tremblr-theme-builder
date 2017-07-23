@@ -7,6 +7,7 @@ No longer will you have to spend hours gawking at your own code, wondering where
 1. Install [Node.js](https://nodejs.org/en/download/current/)
 2. Open your command line and run:
    * `npm install`
+   * `npm install -g grunt-cli`
 3. Run the following commands
    * To run the watcher, which automatically compiles changes into sample.html:
       * `grunt`
