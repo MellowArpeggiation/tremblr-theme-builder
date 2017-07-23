@@ -12,7 +12,7 @@ block content
     // {/block:AudioEmbed}
 
     //- If the native audio player is used
-    // {block:AudioPlayer}
+    // {block:AudioPlayer}[0]
     .card-img-top {AudioPlayer}
     // {/block:AudioPlayer}
 
@@ -25,7 +25,7 @@ block content
     
     .card-block
         // {block:Caption}
-        p.card-text {Caption}
+        p.card-text {Caption}(This is an audio post)
         // {/block:Caption}
 
         //- The playcount for this audio file
