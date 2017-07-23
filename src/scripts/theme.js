@@ -5,6 +5,7 @@
      * @returns {Boolean}    - If this function returns false, it will block the Notes from being inserted.
      */
     var onNotesLoaded = function (html) {
+        $(html);
         return true;
     };
 
