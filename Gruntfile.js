@@ -7,8 +7,7 @@ module.exports = function (grunt) {
     var replaceJSON = grunt.file.readJSON('replacements.json'),
         samplePatterns = [],
         tumblrPatterns = [],
-        key,
-        replacement;
+        key;
 
     function getRandomInt(min, max) {
         min = Math.ceil(min);
@@ -56,7 +55,6 @@ module.exports = function (grunt) {
             var countString = arguments[countLocation],
                 countSplit = countString.split('-'),
                 count,
-                min, max,
                 content = arguments[contentLocation],
                 string = '';
 
