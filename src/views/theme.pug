@@ -31,9 +31,10 @@ html
             )
                 span.navbar-toggler-icon
             
-            span.hidden-sm-up.nav-item.nav-link.float-right &nbsp;
-            #navigation.collapse.navbar-collapse
-                .container
+            .container
+                a.navbar-brand.float-left
+                    img.d-inline-block.align-top(src='{PortraitURL-30}')
+                #navigation.collapse.navbar-collapse.justify-content-center
                     .navbar-nav
                         // {block:AskEnabled}
                         a.nav-item.nav-link(href='#') {AskLabel}(Ask)
@@ -41,6 +42,11 @@ html
                         // {block:SubmissionsEnabled}
                         a.nav-item.nav-link(href='#') {SubmitLabel}(Submit)
                         // {/block:SubmissionsEnabled}
+                        // {block:HasPages}
+                        // {block:Pages}
+                        a.nav-item.nav-link(href='{URL}') {Label}(About)
+                        // {/block:Pages}
+                        // {/block:HasPages}
         
         //- Content
         .container.mt-5

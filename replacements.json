@@ -11,6 +11,7 @@
             "{AvatarShape}": "square",
             
             "{Favicon}": "https://assets.tumblr.com/images/default_avatar/cube_closed_128.png",
+            "{PortraitURL-30}": "https://assets.tumblr.com/images/default_avatar/cube_closed_30.png",
     
             "{CurrentPage}": 1,
             "{TotalPages}": 1,
@@ -44,7 +45,13 @@
     
             "{Alt}": ["odd", "even"],
     
-            "{Tag}": ["tags", "wow", "sample posts", "blog", "such theme", "very cool", "some tags here!", "timble tumblr.crumblr", "sounds good", "odd tags"]
+            "{Tag}": ["tags", "wow", "sample posts", "blog", "such theme", "very cool", "some tags here!", "timble tumblr.crumblr", "sounds good", "odd tags"],
+            "{Label}": ["George:", "You:"],
+            "{Line}": [
+                "I'm here to tell you that this is what your chat posts will look like",
+                "Oh cool, thanks for letting me know",
+                "No problem!"
+            ]
         },
         "regex": {
             "(\\{[^:{}]*\\})\\(([^)]*)\\)": "$2"
