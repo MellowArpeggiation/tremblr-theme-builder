@@ -34,17 +34,7 @@
             "{Minutes}": ["23", "53", "1", "5", "45", "0"],
             "{Seconds}": ["4", "23", "59", "1", "0"],
             "{Timestamp}": "1172705619",
-            
-            "{Title}": [
-                "Blog Title",
-                "Blog Title",
-                "This is a text post",
-                "This is a chat post"
-            ],
-            "{Description}": [
-                "This is what your link posts will look like",
-                "This is a sample blog theme, feel free to make it your own!"
-            ],
+
             "{Caption}": [
                 "This is what your regular photo posts will look like",
                 "This is what your panorama posts will look like",
@@ -59,26 +49,27 @@
         
             "{Video-700}": "<iframe width=\"700\" height=\"394\" id=\"youtube_iframe\" src=\"https://www.youtube.com/embed/e-IWRmpefzE?feature=oembed&amp;enablejsapi=1&amp;origin=https://safe.txmblr.com&amp;wmode=opaque\" frameborder=\"0\" allowfullscreen=\"\"></iframe>",
             "{AudioEmbed}": "<iframe class=\"spotify_audio_player\" src=\"https://embed.spotify.com/?uri=spotify%3Atrack%3A27Sb5HdiMh9k1z5oPI9r3B&amp;view=coverart\" frameborder=\"0\" allowtransparency=\"true\" width=\"500\" height=\"580\"></iframe>",
-            "{PlayCountWithLabel}": "12,309 plays",
     
-            "{Quote}": "It does not matter how slow you go so long as you do not stop.",
-            "{Source}": "Confucious",
-            "{Name}": "This is a link post",
-            "{Label}": ["George:"],
-            "{Line}": "I'm here to tell you that this is what your chat posts will look like",
             "{Alt}": ["odd", "even"],
     
             "{Tag}": ["text post", "photo", "panorama", "photoset", "quote", "link", "chat", "video", "audio"]
         },
         "regex": {
-            "\\{[^:}]*\\}\\((.*)\\)": "$1",
+            "(\\{[^:{}]*\\})\\(([^)]*)\\)": "$2",
             "<!-- \\{block:AudioPlayer\\}-->(.*?)<!-- \\{/block:AudioPlayer\\}-->": ""
+        },
+        "duplicate": {
+            
         }
     },
     "tumblr": {
         "text": {
             "<!-- ": "",
             "-->": ""
+        },
+        "regex": {
+            "(\\{[^:{}]*\\})\\(([^)]*)\\)": "$1",
+            "(\\{[^{}]*\\})\\[([^\\]]*)\\]": "$1"
         }
     }
 }

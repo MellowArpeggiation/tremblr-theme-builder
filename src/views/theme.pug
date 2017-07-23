@@ -1,7 +1,7 @@
 doctype html
 html
     head
-        title {Title}
+        title {Title}(Blog Title)
         link(rel='shortcut icon' href='{Favicon}')
         link(rel='alternate' type='application/rss+xml' href='{RSS}')
         meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
@@ -12,13 +12,13 @@ html
         
         //- Insert stylesheet, uses custom grunt insert directive
         style
-            // !import styles
+            // @import styles
             // {CustomCSS}
     body
 
         .jumbotron
             .container
-                h1 {Title}
+                h1 {Title}(Blog Title)
 
         //- Navigation
         nav.navbar.navbar-toggleable.navbar-light.bg-faded.sticky-top
@@ -82,4 +82,4 @@ html
         
         //- Insert custom scripts, uses custom grunt insert directive
         script
-            // !import scripts
+            // @import scripts

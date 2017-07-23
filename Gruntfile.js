@@ -63,7 +63,7 @@ module.exports = function (grunt) {
             replacement: arrayToFunction(replaceJSON.tumblr.regex[key])
         });
     }
-
+    
     for (key in replaceJSON.tumblr.text) {
         tumblrPatterns.push({
             match: key,
@@ -151,12 +151,12 @@ module.exports = function (grunt) {
             scripts: {
                 src: '.grunt/theme.min.js',
                 dest: '.grunt/theme.html',
-                match: '<!-- !import scripts-->'
+                match: '<!-- @import scripts-->'
             },
             styles: {
                 src: '.grunt/theme.css',
                 dest: '.grunt/theme.html',
-                match: '<!-- !import styles-->'
+                match: '<!-- @import styles-->'
             }
         },
 
