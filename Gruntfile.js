@@ -186,6 +186,20 @@ module.exports = function (grunt) {
             }
         },
 
+        // Post process CSS to add vendor prefixes
+        postcss: {
+            options: {
+                processors: [
+                    require('autoprefixer')({
+                        browsers: 'last 2 versions'
+                    })
+                ]
+            },
+            styles: {
+                src: '.grunt/theme.css'
+            }
+        },
+
         // Create the distibutable copies
         copy: {
             compiled: {
@@ -239,13 +253,13 @@ module.exports = function (grunt) {
 
     grunt.registerTask('views', ['pug', 'prepare-sample']);
     grunt.registerTask('scripts', ['uglify', 'prepare-sample']);
-    grunt.registerTask('styles', ['sass', 'prepare-sample']);
+    grunt.registerTask('styles', ['sass', 'postcss', 'prepare-sample']);
 
     grunt.registerTask('prepare-sample', ['copy', 'insert', 'replace:sample']);
     grunt.registerTask('prepare-tumblr', ['copy', 'insert', 'replace:tumblr']);
     
     // Compile to create a locally viewable version
     // Tumblr to create a a tumblr-ready version
-    grunt.registerTask('compile', ['pug', 'uglify', 'sass', 'prepare-sample']);
-    grunt.registerTask('tumblr', ['pug', 'uglify', 'sass', 'prepare-tumblr']);
+    grunt.registerTask('compile', ['pug', 'uglify', 'sass', 'postcss', 'prepare-sample']);
+    grunt.registerTask('tumblr', ['pug', 'uglify', 'sass', 'postcss', 'prepare-tumblr']);
 };
