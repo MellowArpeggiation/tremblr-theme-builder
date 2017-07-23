@@ -10,6 +10,12 @@ module.exports = function (grunt) {
         key,
         replacement;
 
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
     /**
      * @desc Parses an input array into a function that returns each element sequentially when called
      *       If the input is anything else, return it unmutated
@@ -47,9 +53,18 @@ module.exports = function (grunt) {
         }
 
         return function () {
-            var count = parseInt(arguments[countLocation], 10),
+            var countString = arguments[countLocation],
+                countSplit = countString.split('-'),
+                count,
+                min, max,
                 content = arguments[contentLocation],
                 string = '';
+
+            if (countSplit.length === 1) {
+                count = parseInt(countString, 10);
+            } else {
+                count = getRandomInt(parseInt(countSplit[0], 10), parseInt(countSplit[1], 10));
+            }
 
             for (var i = 0; i < count; i++) {
                 string += content;
