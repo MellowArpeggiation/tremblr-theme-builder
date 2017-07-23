@@ -16,6 +16,7 @@
         "semi": "error",
         "comma-dangle": "error",
         "curly": ["error", "multi-line"],
+        "radix": "error",
 
         "no-unused-vars": "warn",
         "space-before-blocks": "warn",
