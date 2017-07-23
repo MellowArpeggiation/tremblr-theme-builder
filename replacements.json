@@ -34,14 +34,6 @@
             "{Minutes}": ["23", "53", "1", "5", "45", "0"],
             "{Seconds}": ["4", "23", "59", "1", "0"],
             "{Timestamp}": "1172705619",
-
-            "{Caption}": [
-                "This is what your regular photo posts will look like",
-                "This is what your panorama posts will look like",
-                "This is what your photoset posts will look like, multiple photos!",
-                "This is a video post",
-                "This is an audio post"
-            ],
         
             "{PhotoURL-500}": "https://68.media.tumblr.com/71faf3456411d636c82f8b0b51b87f6e/tumblr_ot4msyMgBA1wum1vko1_500.jpg",
             "{PhotoURL-Panorama}": "https://68.media.tumblr.com/27417bb967101c7a1a06eb3834a220d5/tumblr_ot4mwisRYW1wum1vko1_500.jpg",
@@ -52,14 +44,16 @@
     
             "{Alt}": ["odd", "even"],
     
-            "{Tag}": ["text post", "photo", "panorama", "photoset", "quote", "link", "chat", "video", "audio"]
+            "{Tag}": ["tags", "wow", "sample posts", "blog", "such theme", "very cool", "some tags here!", "timble tumblr.crumblr", "sounds good", "odd tags"]
         },
         "regex": {
-            "(\\{[^:{}]*\\})\\(([^)]*)\\)": "$2",
-            "<!-- \\{block:AudioPlayer\\}-->(.*?)<!-- \\{/block:AudioPlayer\\}-->": ""
+            "(\\{[^:{}]*\\})\\(([^)]*)\\)": "$2"
         },
         "duplicate": {
-            
+            "<!-- {[^}]*}\\[([^\\]]*)\\]-->.*?{/[^}]*}-->": {
+                "count": "$1",
+                "content": "$&"
+            }
         }
     },
     "tumblr": {

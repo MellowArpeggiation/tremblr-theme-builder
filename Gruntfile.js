@@ -12,18 +12,18 @@ module.exports = function (grunt) {
 
     /**
      * @desc Parses an input array into a function that returns each element sequentially when called
-     *       If the input is a regular string, just return that
-     * @param {String|Array} input 
-     * @returns {String|Function}
+     *       If the input is anything else, return it unmutated
+     * @param {*|Array} input 
+     * @returns {*|Function}
      */
-    function arrayToFunction(input) {
+    function arrayFactory(input) {
         // Check if the replacement is an array of strings
         if (Array.isArray(input)) {
             return (function () {
                 // Return an anonymous function with closured values
 
-                var i = 0;
-                var strings = input;
+                var i = 0,
+                    strings = input;
 
                 return function () {
                     var string = strings[i++];
@@ -36,13 +36,46 @@ module.exports = function (grunt) {
         return input;
     }
 
+    function duplicateFactory(options) {
+        var countLocation = parseInt(options.count.substr(1), 10),
+            contentLocation;
+        
+        if (options.content === '$&') {
+            contentLocation = 0;
+        } else {
+            contentLocation = parseInt(options.content.substr(1), 10);
+        }
+
+        return function () {
+            var count = parseInt(arguments[countLocation], 10),
+                content = arguments[contentLocation],
+                string = '';
+
+            for (var i = 0; i < count; i++) {
+                string += content;
+            }
+
+            return string;
+        };
+    }
+
+    // Read in the replacement data, importing the match as regex, and using the duplicateFactory replacement
+    // match: {Regex}
+    // replacement: {Function}
+    for (key in replaceJSON.sample.duplicate) {
+        samplePatterns.push({
+            match: new RegExp(key, 'g'),
+            replacement: duplicateFactory(replaceJSON.sample.duplicate[key])
+        });
+    }
+
     // Read in the replacement data, importing the match as regex
     // match: {Regex}
     // replacement: {String|Function}
     for (key in replaceJSON.sample.regex) {
         samplePatterns.push({
             match: new RegExp(key, 'g'),
-            replacement: arrayToFunction(replaceJSON.sample.regex[key])
+            replacement: arrayFactory(replaceJSON.sample.regex[key])
         });
     }
     
@@ -52,22 +85,22 @@ module.exports = function (grunt) {
     for (key in replaceJSON.sample.text) {
         samplePatterns.push({
             match: key,
-            replacement: arrayToFunction(replaceJSON.sample.text[key])
+            replacement: arrayFactory(replaceJSON.sample.text[key])
         });
     }
 
     // Same as above, but for tumblr replacements
-    for (key in replaceJSON.tumblr.regex) {
-        tumblrPatterns.push({
-            match: new RegExp(key, 'g'),
-            replacement: arrayToFunction(replaceJSON.tumblr.regex[key])
-        });
-    }
-    
     for (key in replaceJSON.tumblr.text) {
         tumblrPatterns.push({
             match: key,
-            replacement: arrayToFunction(replaceJSON.tumblr.text[key])
+            replacement: arrayFactory(replaceJSON.tumblr.text[key])
+        });
+    }
+
+    for (key in replaceJSON.tumblr.regex) {
+        tumblrPatterns.push({
+            match: new RegExp(key, 'g'),
+            replacement: arrayFactory(replaceJSON.tumblr.regex[key])
         });
     }
 
@@ -168,6 +201,7 @@ module.exports = function (grunt) {
             sample: {
                 options: {
                     usePrefix: false,
+                    preserveOrder: true,
                     // Use the constructed patterns array for replacements
                     patterns: samplePatterns
                 },
@@ -177,6 +211,7 @@ module.exports = function (grunt) {
             tumblr: {
                 options: {
                     usePrefix: false,
+                    preserveOrder: true,
                     patterns: tumblrPatterns
                 },
                 src: '.grunt/theme.html',
