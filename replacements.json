@@ -12,6 +12,7 @@
             
             "{Favicon}": "https://assets.tumblr.com/images/default_avatar/cube_closed_128.png",
             "{PortraitURL-30}": "https://assets.tumblr.com/images/default_avatar/cube_closed_30.png",
+            "{HeaderImage}": "https://assets.tumblr.com/images/default_header/optica_pattern_02.png?_v=b976ee00195b1b7806c94ae285ca46a7",
     
             "{CurrentPage}": 1,
             "{TotalPages}": 1,
@@ -57,8 +58,8 @@
             "(\\{[^:{}]*\\})\\(([^)]*)\\)": "$2"
         },
         "duplicate": {
-            "<!-- {[^}]*}\\[([^\\]]*)\\]-->.*?{/[^}]*}-->": {
-                "count": "$1",
+            "<!-- {([^}]*)}\\[([^\\]]*)\\]-->.*?{/\\1}-->": {
+                "count": "$2",
                 "content": "$&"
             }
         }
