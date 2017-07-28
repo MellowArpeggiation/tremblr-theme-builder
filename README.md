@@ -36,6 +36,26 @@ In your pug document, add in the markup tag with a visible comment, for example,
 // {/block:Posts}
 ```
 
+To duplicate a block, use square brackets and a count, or a range
+```pug
+// {block:Tags}[1-3]
+.tag
+    p #{Tag}
+// {/block:Tags}
+```
+
+To remove a block from the sample, use a zero as the count:
+```pug
+// {block:AudioPlayer}[0]
+// {AudioPlayer}
+// {/block:AudioPlayer}
+```
+
+To add your own sample replacement content to a tag use parentheses immediately after the close brace:
+```pug
+// {Body}(This is what your body content will look like!)
+```
+
 See Tumblr's [custom theme documentation](https://www.tumblr.com/docs/en/custom_themes) for all markup options
 
 ## How do I put my finished theme into Tumblr?
