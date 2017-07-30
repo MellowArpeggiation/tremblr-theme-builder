@@ -36,7 +36,7 @@ In your pug document, add in the markup tag with a visible comment, for example,
 // {/block:Posts}
 ```
 
-To duplicate a block, use square brackets and a count, or a range
+To duplicate a block in the sample, use square brackets and a count, or a range
 ```pug
 // {block:Tags}[1-3]
 .tag
@@ -55,6 +55,8 @@ To add your own sample replacement content to a tag use parentheses immediately 
 ```pug
 // {Body}(This is what your body content will look like!)
 ```
+
+You don't need to add your own sample content for most blocks, see `replacements.json` for a full list of sample file replacements
 
 See Tumblr's [custom theme documentation](https://www.tumblr.com/docs/en/custom_themes) for all markup options
 
