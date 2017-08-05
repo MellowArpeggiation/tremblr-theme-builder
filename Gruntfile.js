@@ -162,6 +162,12 @@ module.exports = function (grunt) {
             },
             tumblr: {
                 options: {
+                    title: 'Theme compiled',
+                    message: 'theme.html has fininshed compiling'
+                }
+            },
+            publish: {
+                options: {
                     title: 'Theme uploaded',
                     message: 'theme.html has been successfully uploaded to Tumblr'
                 }
@@ -347,10 +353,13 @@ module.exports = function (grunt) {
     grunt.registerTask('styles', ['sass', 'postcss', 'prepare-sample']);
 
     grunt.registerTask('prepare-sample', ['copy', 'insert', 'replace:sample', 'notify:sample']);
-    grunt.registerTask('prepare-tumblr', ['copy', 'insert', 'replace:tumblr', 'http', 'notify:tumblr']);
+    grunt.registerTask('prepare-tumblr', ['copy', 'insert', 'replace:tumblr', 'notify:tumblr']);
+    grunt.registerTask('prepare-publish', ['copy', 'insert', 'replace:tumblr', 'http', 'notify:publish']);
     
     // Compile to create a locally viewable version
-    // Tumblr to create a a tumblr-ready version
+    // Tumblr to create a a Tumblr-ready version
+    // Publish to upload the Tumblr-ready version directly to Tumblr
     grunt.registerTask('compile', ['pug', 'eslint', 'uglify', 'sass', 'postcss', 'prepare-sample']);
     grunt.registerTask('tumblr', ['pug', 'eslint', 'uglify', 'sass', 'postcss', 'prepare-tumblr']);
+    grunt.registerTask('publish', ['pug', 'eslint', 'uglify', 'sass', 'postcss', 'prepare-publish']);
 };
