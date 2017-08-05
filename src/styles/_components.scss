@@ -1,12 +1,24 @@
-// Just two columns for main content cards
+// Header styles
+.header {
+    .jumbotron {
+        background-image: url($header-image);
+        color: $title-color;
+
+        height: 40vh;
+
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+// Post block styles
 .posts {
+    // Just two columns for main content cards
     &.card-columns {
-        @include media-breakpoint-up(sm) {
-            column-count: 1;
-        }
-        @include media-breakpoint-up(lg) {
-            column-count: 2;
-        }
+        column-width: 450px;
+        column-count: auto;
     }
 
     .video-container {
@@ -25,7 +37,7 @@
     }
 
     .tag {
-        color: #999;
+        color: $accent-color;
         padding-right: 1em;
     }
 }
