@@ -1,10 +1,12 @@
 // Header styles
 .header {
+    height: 40vh;
+
     .jumbotron {
+        height: 100%;
+
         background-image: url($header-image);
         color: $title-color;
-
-        height: 40vh;
 
         display: flex;
         align-items: flex-end;
