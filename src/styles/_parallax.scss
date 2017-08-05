@@ -1,0 +1,9 @@
+// Image parallax styling
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+
+    .parallax {
+        position: absolute;
+    }
+}
