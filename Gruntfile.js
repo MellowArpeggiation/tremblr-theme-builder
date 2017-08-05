@@ -152,6 +152,21 @@ module.exports = function (grunt) {
                 tasks: ['styles']
             }
         },
+
+        notify: {
+            sample: {
+                options: {
+                    title: 'Sample compiled',
+                    message: 'sample.html has finished compiling'
+                }
+            },
+            tumblr: {
+                options: {
+                    title: 'Theme uploaded',
+                    message: 'theme.html has been successfully uploaded to Tumblr'
+                }
+            }
+        },
         
         // Compile pug to html
         pug: {
@@ -249,6 +264,79 @@ module.exports = function (grunt) {
                 src: '.grunt/theme.html',
                 dest: 'dist/theme.html'
             }
+        },
+
+        // Send the latest theme to Tumblr
+        http: {
+            postTumblr: {
+                options: {
+                    url: 'https://www.tumblr.com/customize_api/blog/tremblrtheme',
+                    headers: {
+                        "Cookie": "rxx=1xcxwccjk91.1g0vbf4&v=1; tmgioct=596997d8cf03d20576528200; anon_id=MUHHYGSHVXYWGKZZJYZLFBUNIUMESLUZ; logged_in=1; use_own_posts=1; nts=true; capture=cnzOgtunXPuMvf6PGb48RReeIRI; language=%2Cen_US; pfp=W1vym2kQDME7VF1oDWW3tqomisU0evn40PLdrVs3; pfs=cmZBl40YfEpKLBgrFltyHD2t5U; pfe=1507871622; pfu=38855025; pfx=1c2fc9024519ac291b0dead44cd2a9ebc8f2a7267b955df6cc9236adbbe491dc%230%234271846327; devicePixelRatio=1; documentWidth=1903; __utma=189990958.1533710215.1406201325.1501922164.1501924784.89; __utmc=189990958; __utmz=189990958.1500725688.77.57.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); _ga=GA1.2.1533710215.1406201325; _gid=GA1.2.1161574138.1501906587; yx=4n4816g9fsscq%26o%3D3%26f%3Dze; customize_word_wrap=1"
+                    },
+                    method: 'POST',
+                    json: true,
+                    body: {
+                        "custom_css": "",
+                        "description": "This is a blog to show off the new Tremblr theme",
+                        "enable_url_slugs": 1,
+                        "name": "tremblrtheme",
+                        "open_links_in_new_window": 0,
+                        "posts_per_page": "15",
+                        "theme_id": 0,
+                        "title": "Tremblr Theme",
+                        "truncate_feed": 0,
+                        "global_params": {
+                            "avatar_shape": "square",
+                            "background_color": "#FAFAFA",
+                            "body_font": "Helvetica Neue",
+                            "header_bounds": 0,
+                            "header_image": "http://assets.tumblr.com/images/default_header/optica_pattern_02.png?_v=b976ee00195b1b7806c94ae285ca46a7",
+                            "header_image_dimens": "",
+                            "header_image_focused": "http://assets.tumblr.com/images/default_header/optica_pattern_02.png?_v=b976ee00195b1b7806c94ae285ca46a7",
+                            "header_image_scaled": "http://assets.tumblr.com/images/default_header/optica_pattern_02.png?_v=b976ee00195b1b7806c94ae285ca46a7",
+                            "header_stretch": true,
+                            "link_color": "#529ECC",
+                            "show_avatar": true,
+                            "show_description": true,
+                            "show_header_image": true,
+                            "show_title": true,
+                            "title_color": "#444444",
+                            "title_font": "Gibson",
+                            "title_font_weight": "bold"
+                        },
+                        "custom_params": {
+                            "if:Endless scrolling": true,
+                            "if:Related Posts": true,
+                            "if:Show navigation": true,
+                            "if:Sliding header": true,
+                            "if:Syntax highlighting": false,
+                            "select:Layout": "regular",
+                            "text:Disqus shortname": "",
+                            "text:Google analytics ID": ""
+                        },
+                        "custom_theme": grunt.file.read('dist/theme.html'),
+                        "purchased_theme_ids": ["39927"],
+                        "enable_mobile_interface": false,
+                        "enable_google_amp": true,
+                        "brag": true,
+                        "url": "https://tremblrtheme.tumblr.com/",
+                        "theme_author_prompt": false,
+                        "PortraitURL-16": "https://assets.tumblr.com/images/default_avatar/cube_closed_16.png",
+                        "PortraitURL-24": "https://assets.tumblr.com/images/default_avatar/cube_closed_24.png",
+                        "PortraitURL-30": "https://assets.tumblr.com/images/default_avatar/cube_closed_30.png",
+                        "PortraitURL-40": "https://assets.tumblr.com/images/default_avatar/cube_closed_40.png",
+                        "PortraitURL-48": "https://assets.tumblr.com/images/default_avatar/cube_closed_48.png",
+                        "PortraitURL-64": "https://assets.tumblr.com/images/default_avatar/cube_closed_64.png",
+                        "PortraitURL-96": "https://assets.tumblr.com/images/default_avatar/cube_closed_96.png",
+                        "PortraitURL-128": "https://assets.tumblr.com/images/default_avatar/cube_closed_128.png",
+                        "avatar_url": "https://assets.tumblr.com/images/default_avatar/cube_closed_128.png",
+                        "id": "tremblrtheme",
+                        "user_form_key": "cnzOgtunXPuMvf6PGb48RReeIRI",
+                        "secure_form_key": "!331501925758|uXhYGCJ51IhCh0NZR3EM8SdxM"
+                    }
+                }
+            }
         }
     });
 
@@ -258,8 +346,8 @@ module.exports = function (grunt) {
     grunt.registerTask('scripts', ['eslint', 'uglify', 'prepare-sample']);
     grunt.registerTask('styles', ['sass', 'postcss', 'prepare-sample']);
 
-    grunt.registerTask('prepare-sample', ['copy', 'insert', 'replace:sample']);
-    grunt.registerTask('prepare-tumblr', ['copy', 'insert', 'replace:tumblr']);
+    grunt.registerTask('prepare-sample', ['copy', 'insert', 'replace:sample', 'notify:sample']);
+    grunt.registerTask('prepare-tumblr', ['copy', 'insert', 'replace:tumblr', 'http', 'notify:tumblr']);
     
     // Compile to create a locally viewable version
     // Tumblr to create a a tumblr-ready version
