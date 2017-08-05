@@ -1,0 +1,15 @@
+// Tumblr variables
+
+// ~[ and ]~ will be replaced with { and } respectively
+// Otherwise, autoprefixer will fail to parse the file
+
+// Since these are strings, you can't do any math or color stuff with them
+
+$title-font: #{'~[TitleFont]~'};
+$title-font-weight: #{'~[TitleFontWeight]~'};
+
+$accent-color: #{'~[AccentColor]~'};
+$title-color: #{'~[TitleColor]~'};
+$background-color: #{'~[BackgroundColor]~'};
+
+$header-image: #{'~[HeaderImage]~'};
