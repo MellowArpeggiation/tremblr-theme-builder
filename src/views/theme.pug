@@ -15,10 +15,10 @@ html
             // @import styles
             // {CustomCSS}
     body
-
-        .jumbotron(style='background-image: url("{HeaderImage}")')
-            .container
-                h1 {Title}(Blog Title)
+        .header.parallax-container
+            .jumbotron.parallax
+                .container
+                    h1 {Title}(Tremblr Theme)
 
         //- Navigation
         nav.navbar.navbar-toggleable.navbar-light.bg-faded.sticky-top
@@ -61,6 +61,7 @@ html
                 include post-chat.pug
                 include post-video.pug
                 include post-audio.pug
+                include post-answer.pug
                 // {/block:Posts}
 
 
