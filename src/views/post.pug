@@ -1,5 +1,10 @@
 block post
     .card.mb-4
+        // {block:RebloggedFrom}[1]
+        .card-header
+            p {ReblogParentTitle}
+        // {/block:RebloggedFrom}
+
         block content
 
         .card-footer.text-muted
