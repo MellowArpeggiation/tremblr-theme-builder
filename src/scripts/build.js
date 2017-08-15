@@ -1,6 +1,7 @@
 module.exports = {
     concat: [
         "tumblr-hooks.js",
-        "parallax.js"
+        "parallax.js",
+        "anagrammer.js"
     ]
 };
