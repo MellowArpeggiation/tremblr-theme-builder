@@ -1,0 +1,26 @@
+#anagram {
+	height: 32vw;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.anchar {
+	margin: 0.5vw 0.2vw;
+	height: 9vw;
+	width: auto; /* Required for IE10- */
+}
+
+#anword {
+	text-align: center;
+}
+
+#dummy {
+	margin: -0.5vw -0.2vw;
+	width: 99%;
+}
+
+.anchar.i {
+	padding-left: 0.5vw;
+	padding-right: 0.3vw;
+}
