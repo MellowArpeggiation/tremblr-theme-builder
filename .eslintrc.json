@@ -15,7 +15,7 @@
     "rules": {
         "eqeqeq": "error",
         "semi": "error",
-        "comma-dangle": "error",
+        "comma-dangle": ["error", "always-multiline"],
         "curly": ["error", "multi-line"],
         "radix": "error",
 
